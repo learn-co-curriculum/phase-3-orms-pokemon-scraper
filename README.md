@@ -5,7 +5,7 @@ resources: 4
 ---
 
 ##Gotta Scrape 'Em All
-We've found all 151 pokemon! They're in the `pokemon_index.html`, but if we want to catch them then we have to get them into our database.  This is going to mean [scraping](http://ruby.bastardsbook.com/chapters/html-parsing/).  The other thing we're going to need is a database.
+We've found all 151 pokemon! They're in the `pokemon_index.html`, but if we want to catch them then we have to get them into our database then we're going to have to do some [scraping](http://ruby.bastardsbook.com/chapters/html-parsing/).  The other thing we're going to need is a database.
 
 ###Database Scraping
 To make a database we're going to do so in the `db/` directory.  This is where all sql files should go.  Inside `db/` is a file called `schema_migration.sql`.  There you will write your sql statements to create a table with the proper schema.  The schema should an id column, name column, and a type column. The latter two should have the [datatype](http://www.sqlite.org/datatype3.html) `text` and the former an integer.

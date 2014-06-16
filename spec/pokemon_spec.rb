@@ -1,6 +1,6 @@
 require_relative "spec_helper"
 
-describe Pokemon do
+describe "Pokemon" do
   before do
     @db = SQLite3::Database.new(':memory:')
     @sql_runner = SQLRunner.new(@db)
@@ -21,7 +21,7 @@ describe Pokemon do
       expect(@db.execute("YOUR SQL HERE")).to eq("Snorlax")
     end
 
-    xit "knows Charmander's type is fire"
+    xit "knows Charmander's type is fire" do
       expect(@db.execute("YOUR SQL HERE")).to eq("Fire")
     end
   end
@@ -39,5 +39,4 @@ describe Pokemon do
       expect(@db.execute("YOUR SQL HERE")).to eq("Togepi")
     end
   end
-
 end
