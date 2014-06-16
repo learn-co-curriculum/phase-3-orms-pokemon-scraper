@@ -1,4 +1,14 @@
-# A sample Gemfile
 source "https://rubygems.org"
 
-# gem "rails"
+
+# Scraping
+gem 'nokogiri'
+
+# Database
+gem 'sqlite3'
+
+# Testing
+gem 'rspec', '>= 3.0'
+
+# Debugging
+gem 'pry'
