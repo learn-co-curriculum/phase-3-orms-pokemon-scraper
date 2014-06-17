@@ -4,7 +4,7 @@ class SQLRunner
   end
 
   def execute_schema_migration_sql
-    sql = File.read('../db/schema_migration.sql')
+    sql = File.read('db/schema_migration.sql')
     execute_sql(sql)
   end
 
