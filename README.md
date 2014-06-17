@@ -1,7 +1,7 @@
 ---
 topics: scraping, sqlite, sql
 languages: ruby, sql, sqlite
-resources: 4
+resources: 6
 ---
 
 ##Gotta Scrape 'Em All
@@ -9,6 +9,11 @@ We've found all 151 pokemon! They're in the `pokemon_index.html`, but if we want
 
 ###Database Scraping
 To make a database we're going to do so in the `db/` directory.  This is where all sql files should go.  Inside `db/` is a file called `schema_migration.sql`.  There you will write your sql statements to create a table with the proper schema.  The schema should an id column, name column, and a type column. The latter two should have the [datatype](http://www.sqlite.org/datatype3.html) `text` and the former an integer.
+
+###Inserting Into the Database
+When you use sql to insert into a database you write out the values by hand and insert them into the database.  However, when you insert your pokemon into the database you don't want to insert them into the query via string interpolation because of potential [dangerous consequences](http://xkcd.com/327/).  Instead we need to [sanitize](http://stackoverflow.com/questions/9614236/escaping-strings-for-ruby-sqlite-insert) the data that goes into the query string you need to [execute](http://rdoc.info/github/luislavena/sqlite3-ruby).
+
+If you're still having trouble executing commands take a peek into the SQLRunner class.
 
 ###Scraping
 Once the schema is set up we then need can start scraping, and catching our pokemon. However, we still need methods to save our pokemon to the database.  Now we have to decide whose job is it save information about the pokemon to the database.  Is it the scraper, who is grabbing all the data? Or is it the pokemon themselves?  For our purposes, it is the pokemon.  What happens if we decide to add, remove, or even change something about the pokemon? The scraper just shouldn't be responsible about knowing information about the pokemon.  Therefore, we'll need to create a `save` method for the class pokemon that will take the name and the types and insert them into the database using [raw sql](http://www.sqlite.org/lang.html).
