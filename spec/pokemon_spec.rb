@@ -13,16 +13,16 @@ describe "Pokemon" do
       expect(@db.execute("SELECT COUNT(*) FROM pokemon")).to eq(151)
     end
 
-    xit "knows Psyduck is the 54th pokemon" do
-      expect(@db.execute("YOUR SQL HERE")).to eq(54)
+    it "knows Psyduck is the 54th pokemon" do
+      expect(@db.execute("SELECT id FROM pokemon WHERE name = 'Psyduck'")).to eq(54)
     end
 
-    xit "knows pokemon with the id 143 is Snorlax" do
-      expect(@db.execute("YOUR SQL HERE")).to eq("Snorlax")
+    it "knows pokemon with the id 143 is Snorlax" do
+      expect(@db.execute("SELECT name FROM pokemon WHERE id = 143")).to eq("Snorlax")
     end
 
-    xit "knows Charmander's type is fire" do
-      expect(@db.execute("YOUR SQL HERE")).to eq("Fire")
+    it "knows Charmander's type is fire" do
+      expect(@db.execute("SELECT type FROM pokemon WHERE name = 'Charmander'")).to eq("Fire")
     end
   end
 
@@ -31,12 +31,12 @@ describe "Pokemon" do
       Pokemon.save("Togepi", "Fairy")
     end
 
-    xit "increases the amount of pokemon" do
-      expect(@db.execute("YOUR SQL HERE")).to eq(152)
+    it "knows the pokemon count increases" do
+      expect(@db.execute("SELECT COUNT(*) FROM pokemon")).to eq(152)
     end
 
-    xit "has Togepi as the last pokemon" do
-      expect(@db.execute("YOUR SQL HERE")).to eq("Togepi")
+    it "has Togepi as the last pokemon" do
+      expect(@db.execute("SELECT LAST(name) FROM pokemon")).to eq("Togepi")
     end
   end
 end
