@@ -14,6 +14,10 @@ describe "Pokemon" do
       expect(@db.execute("SELECT COUNT(*) FROM pokemon")).to eq([[151]])
     end
 
+    it "knows all the information about Horsea" do
+      expect(@db.execute("SELECT * FROM pokemon WHERE name = 'Horsea'")).to eq([[116, "Horsea", "Water"]])
+    end
+
     it "knows Psyduck is the 54th pokemon" do
       expect(@db.execute("SELECT id FROM pokemon WHERE name = 'Psyduck'")).to eq([[54]])
     end
@@ -39,5 +43,37 @@ describe "Pokemon" do
     it "has Togepi as the last pokemon" do
       expect(@db.execute("SELECT name FROM pokemon ORDER BY id DESC LIMIT 1")).to eq([["Togepi"]])
     end
+  end
+
+  describe "BONUS" do
+    before do
+      @sql_runner.execute_create_hp_column
+    end
+    
+    it "knows that a pokemon have a default hp of 60" do
+      expect(@db.execute("SELECT hp FROM pokemon WHERE id = 1")).to eq([[60]])
+    end
+
+    # So Arel and you have decided to battle.  He chose Magikarp (rookie mistake), and you chose Pickachu.
+    # He used splash. It wasn't very effective, it did one damage.
+    it "alters Pickachu's hp to 59" do
+      expect(Pokemon.alter_hp("Pickachu", 59, @db)).to eq(true)
+      expect(@db.execute("SELECT hp FROM pokemon WHERE name = 'Pickachu'")).to eq([[59]])
+    end
+    
+    # You have Pikachu use thunder shock. It's super effective. Magicarp took 60 damage.
+    # Uh oh, looks like we mispelled Magikarp
+    it "knows that there was an error when the pokemon's name is mispelled" do
+      expect(Pokemon.alter_hp("Magicarp", 0, @db)).to eq(false)
+    end
+
+    # Now we use the correct name with `alter_hp`
+    it "correctly alters Magikarp's hp" do
+      expect(Pokemon.alter_hp("Magikarp", 0, @db)).to eq(true)
+      expect(@db.execute("SELECT hp FROM pokemon WHERE name = 'Magikarp'")).to eq([[0]])
+    end
+
+    # The pokemon battle has now been won, and you are the Pokemon and SQL Master!
+
   end
 end
