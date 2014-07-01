@@ -28,6 +28,6 @@ One thing we want to make sure is that our pokemon are getting saved with the ri
 ###BONUS
 Now that we got every pokemon we want to get them ready to fight. (Did you really think you and Arel weren't going to have a battle after capturing every pokemon?) But if they battle we need to keep track of their hp (health power).  And the only way to do that is to alter the database.  What would be perfect is a sql query that adds an `hp` column and default value of 60 to every row.  That sql command should be put into a migration file in `db/`.
 
-Once the `hp` column is set up there should be a class method called `alter_hp` that will allow us to change a specific pokemon's health to a new hp.  It will need to take a pokemon's name, its new health power, and database as parameters. The method should return true if the method worked and false if it failed to find the pokemon.
+Once the `hp` column is set up there should be an class method called `alter_hp` that will allow us to change a specific pokemon's health to a new hp.  It will need to take a pokemon's name, its new health power, and database as parameters. The method should return true if the method worked and false if it failed to find the pokemon.
 
 Follow the pending specs for more information.
