@@ -1,8 +1,4 @@
----
-tags: scraping, sqlite, sql
-languages: ruby, sqlite3
-resources: 6
----
+
 
 ##Gotta Scrape 'Em All
 We've found all 151 pokemon! They're in the `pokemon_index.html`, but if we want to catch them then we have to get them into our database then we're going to have to do some [scraping](http://ruby.bastardsbook.com/chapters/html-parsing/).  The other thing we're going to need is a database.

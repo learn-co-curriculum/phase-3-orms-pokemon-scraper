@@ -47,24 +47,24 @@ describe "Pokemon" do
 
   describe "BONUS" do
     # The find method creates a new Pokemon after selecting their row from the database by their id number.
-    let(:pickachu){Pokemon.find(25, @db)}
+    let(:pikachu){Pokemon.find(25, @db)}
     let(:magikarp){Pokemon.find(129, @db)}
 
     before do
       @sql_runner.execute_create_hp_column
     end
-    
+
     it "knows that a pokemon have a default hp of 60" do
       expect(@db.execute("SELECT hp FROM pokemon WHERE id = 1").flatten.first).to eq(60)
     end
 
-    # So Arel and you have decided to battle.  He chose Magikarp (rookie mistake), and you chose Pickachu.
+    # So Ian and you have decided to battle.  He chose Magikarp (rookie mistake), and you chose Pikachu.
     # He used splash. It wasn't very effective. It did one damage.
     it "alters Pickachu's hp to 59" do
       pickachu.alter_hp(59)
       expect(@db.execute("SELECT hp FROM pokemon WHERE id = 25").flatten.first).to eq(59)
     end
-    
+
     # Now we alter Magikarp's hp
     it "alters Magikarp's hp" do
       magikarp.alter_hp(0)
