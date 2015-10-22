@@ -5,7 +5,7 @@ resources: 6
 ---
 
 ##Objectives:
-1. Set up a `sqlLite` database
+1. Set up a `SQLite` database
 2. Scrape and save data into your database
 3. Use data to make ruby objects
 
