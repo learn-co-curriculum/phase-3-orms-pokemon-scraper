@@ -1,15 +1,14 @@
 require_relative "spec_helper"
 
 describe "Pokemon" do
-  let(:pokemon) {Pokemon.new(1, "Pikachu", "fire", "something")}
-
   before do
     @db = SQLite3::Database.new(':memory:')
+    @db.execute("DROP TABLE IF EXISTS pokemon")
     @sql_runner = SQLRunner.new(@db)
     @sql_runner.execute_schema_migration_sql
-    scraper = Scraper.new(@db)
-    scraper.scrape
   end
+
+  let(:pokemon) {Pokemon.new(1, "Pikachu", "fire", @db)}
 
   describe ".initialize" do
     it 'is initialized with a name, type and db' do
@@ -21,13 +20,19 @@ describe "Pokemon" do
 
   describe ".save" do
     it 'saves and instance of a pokemon with the correct id' do
-      #test here
+      new_pokemon = Pokemon.save("Pikachu", "fire", @db)
+
+      pikachu_from_db = @db.execute("SELECT * FROM pokemon WHERE name = 'Pikachu'")
+      expect(pikachu_from_db).to eq([[1, "Pikachu", "fire"]])
     end
   end
 
   describe ".find" do
-    it 'finds an instance of a pokemon' do
-      #test here
+    it 'finds a pokemon from the database' do
+      newer_pokemon = Pokemon.save("Pikachu", "fire", @db)
+
+      pikachu_from_db = Pokemon.find(1, @db)
+      expect(pikachu_from_db).to eq([1, "Pikachu", "fire"])
     end
   end
 
