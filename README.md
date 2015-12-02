@@ -23,3 +23,5 @@ When you use sql to insert into a database you write out the values by hand and 
 - Fork this repo, and clone your fork.
 - `bundle install` (if that doesn't work run `bundle update`)
 - Follow the pending RSPEC tests to get your sense of direction.
+
+<a href='https://learn.co/lessons/pokemon-scraper' data-visibility='hidden'>View this lesson on Learn.co</a>
