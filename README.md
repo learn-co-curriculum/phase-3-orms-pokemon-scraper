@@ -16,12 +16,13 @@ Our `Pokemon` class can be found in `lib/pokemon.rb`.
 This is where you will build your methods.
 
 ###A Note On Inserting Into the Database
-When you use sql to insert into a database you write out the values by hand and insert them into the database.  However, when you insert your pokemon into the database you don't want to insert them into the query via string interpolation because of potential [dangerous consequences](http://xkcd.com/327/).  Instead we need to [sanitize](http://stackoverflow.com/questions/9614236/escaping-strings-for-ruby-sqlite-insert) the data that goes into the query string you need to [execute](http://rdoc.info/github/luislavena/sqlite3-ruby).
+When you use sql to insert into a database you write out the values by hand and insert them into the database.  However, when you insert your pokemon into the database you don't want to insert them into the query via string interpolation because of potential [dangerous consequences](http://xkcd.com/327/).  Instead we need to [sanitize](http://stackoverflow.com/questions/9614236/escaping-strings-for-ruby-sqlite-insert) the data that goes into the query string you need to [execute](http://stackoverflow.com/questions/13462112/inserting-ruby-string-into-sqlite).
 
 
 ###Getting Started
 - Fork this repo, and clone your fork.
 - `bundle install` (if that doesn't work run `bundle update`)
 - Follow the pending RSPEC tests to get your sense of direction.
+
 
 <a href='https://learn.co/lessons/pokemon-scraper' data-visibility='hidden'>View this lesson on Learn.co</a>
