@@ -25,4 +25,4 @@ When you use sql to insert into a database you write out the values by hand and 
 - Follow the pending RSPEC tests to get your sense of direction.
 
 
-<a href='https://learn.co/lessons/pokemon-scraper' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/pokemon-scraper' title='Objectives:'>Objectives:</a> on Learn.co and start learning to code for free.</p>
