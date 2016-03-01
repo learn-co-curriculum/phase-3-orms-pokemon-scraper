@@ -12,6 +12,7 @@ describe "Pokemon" do
 
   describe ".initialize" do
     it 'is initialized with a name, type and db' do
+      expect(pokemon).to respond_to(:id)
       expect(pokemon).to respond_to(:name)
       expect(pokemon).to respond_to(:type)
       expect(pokemon).to respond_to(:db)
