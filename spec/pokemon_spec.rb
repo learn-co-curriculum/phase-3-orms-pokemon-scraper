@@ -17,6 +17,7 @@ describe "Pokemon" do
       expect(pokemon).to respond_to(:type)
       expect(pokemon).to respond_to(:db)
     end
+  end
 
   describe ".save" do
     it 'saves an instance of a pokemon with the correct id' do
