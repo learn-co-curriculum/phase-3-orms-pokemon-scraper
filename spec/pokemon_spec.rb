@@ -11,7 +11,7 @@ describe "Pokemon" do
   let(:pokemon) {Pokemon.new(1, "Pikachu", "fire", @db)}
 
   describe ".initialize" do
-    it 'is initialized with a name, type and db' do
+    it 'is initialized with an id, name, type and db' do
       expect(pokemon).to respond_to(:id)
       expect(pokemon).to respond_to(:name)
       expect(pokemon).to respond_to(:type)
