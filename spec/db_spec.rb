@@ -11,7 +11,7 @@ describe "schema_migration.sql" do
   end
 
   it "has an autoincrementing id column" do
-    expect(@db.execute("SELECT sql FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE type!='meta' ORDER BY tbl_name, type DESC, name;").first.first).to include("id INTEGER PRIMARY KEY AUTOINCREMENT")
+    expect(@db.execute("SELECT sql FROM (SELECT * FROM sqlite_master UNION ALL SELECT * FROM sqlite_temp_master) WHERE type!='meta' ORDER BY tbl_name, type DESC, name;").first.first).to include("id INTEGER PRIMARY KEY")
   end
 
   it "has a name column" do

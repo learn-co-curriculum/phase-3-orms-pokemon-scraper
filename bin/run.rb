@@ -1,4 +1,5 @@
-require_relative "environment.rb"
+require_relative "environment"
 
-db = SQLite3::Database.new('db/pokemon.db')
-sql_runner = SQLRunner.new(db)
+Scraper.new(@db).scrape
+
+all_pokemon = @db.execute("SELECT * FROM pokemon;")
