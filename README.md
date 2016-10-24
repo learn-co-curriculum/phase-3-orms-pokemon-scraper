@@ -20,6 +20,7 @@ job is to build out the methods to save and find pokemon in the database.
 ### Create Our Pokemon Class
 Our `Pokemon` class can be found in `lib/pokemon.rb`.
 This is where you will build your methods.
+Notice that #initialize requires [keyword arguments](http://stackoverflow.com/questions/15062570/when-to-use-keyword-arguments-aka-named-parameters-in-ruby).  
 
 ### A Note On Inserting Into the Database
 When you use sql to insert into a database you write out the values by hand and
@@ -44,3 +45,5 @@ Follow the pending specs for more information.
 
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/pokemon-scraper' title='Objectives:'>Objectives:</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/pokemon-scraper'>Pokemon Scraper Lab</a> on Learn.co and start learning to code for free.</p>
