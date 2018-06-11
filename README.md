@@ -44,3 +44,5 @@ Once the `hp` column is set up there should be an instance method called `alter_
 Follow the pending specs for more information.
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/pokemon-scraper' title='Objectives:'>Objectives:</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/pokemon-scraper'>Pokemon Scraper Lab</a> on Learn.co and start learning to code for free.</p>
