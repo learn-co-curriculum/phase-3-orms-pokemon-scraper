@@ -8,7 +8,7 @@
 
 ### Overview
 
-In this lab you will set up your schema, scrape data, insert it into your db and
+In this lab, you will set up your schema, scrape data, insert it into your db and
 then build out methods to manipulate your data.
 
 For our purposes the `Pokemon` class is responsible for saving, adding,
@@ -32,10 +32,10 @@ Notice that #initialize requires [keyword arguments][].
 
 ### A Note On Inserting Into the Database
 
-When you use sql to insert into a database you write out the values by hand and
+When you use SQL to insert into a database you write out the values by hand and
 insert them into the database.  However, when you insert your Pokémon into the
 database you don't want to insert them into the query via string interpolation
-because of potential [dangerous consequences][]. Instead we need to [sanitize][]
+because of potential [dangerous consequences][]. Instead, we need to [sanitize][]
 the data that goes into the query string you need to [execute][].
 
 [dangerous consequences]: http://xkcd.com/327/
@@ -59,11 +59,11 @@ Now that we got every pokemon we want to get them ready to fight. (Did you
 really think you and Arel weren't going to have a battle after capturing every
 pokemon?) But if they battle we need to keep track of their hp (health power).
 And the only way to do that is to alter the database.  What would be perfect is
-a sql query that adds an `hp` column and default value of 60 to every row.  That
-sql command should be put into a migration file in `db/`.
+a SQL query that adds an `hp` column and a default value of 60 to every row.  That
+SQL command should be put into a migration file in `db/`.
 
 Once the `hp` column is set up there should be an instance method called
-`alter_hp` that will allow us to change a specific pokemon's health to a new hp.
+`alter_hp` that will allow us to change a specific pokémon's health to a new hp.
 It will need to take a new health power as a parameter.
 
 Follow the pending specs for more information.
