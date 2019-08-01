@@ -39,7 +39,7 @@ because of potential [dangerous consequences][]. Instead, we need to [sanitize][
 the data that goes into the query string you need to [execute][].
 
 [dangerous consequences]: http://xkcd.com/327/
-[sanitize]: http://stackoverflow.com/questions/9614236/escaping-strings-for-ruby-sqlite-insert
+[sanitize]: https://www.quora.com/What-exactly-is-data-sanitization-with-respect-to-SQL-injection
 [execute]: http://stackoverflow.com/questions/13462112/inserting-ruby-string-into-sqlite
 
 ### Getting Started
@@ -55,12 +55,16 @@ as there are pending tests, Learn will not recognize your code as passing.
 
 ### BONUS
 
-Now that we got every pokemon we want to get them ready to fight. (Did you
-really think you and Arel weren't going to have a battle after capturing every
-pokemon?) But if they battle we need to keep track of their hp (health power).
-And the only way to do that is to alter the database.  What would be perfect is
-a SQL query that adds an `hp` column and a default value of 60 to every row.  That
-SQL command should be put into a migration file in `db/`.
+Now that we got every pokemon we want to get them ready to fight.
+
+In `spec/pokemon_spec.rb`, uncomment the tests at the bottom of the file to see
+the additional challenge.
+
+In a battle, we need to keep track of health, traditionally represented as `hp`
+(health points). We can start keeping track of `hp`, but we'll need to alter the
+database.  What would be perfect is a SQL query that adds an `hp` column and a
+default value of 60 to every row.  That SQL command should be put into a
+migration file in `db/`.
 
 Once the `hp` column is set up there should be an instance method called
 `alter_hp` that will allow us to change a specific pokémon's health to a new hp.
