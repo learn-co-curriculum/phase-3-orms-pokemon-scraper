@@ -35,12 +35,18 @@ Notice that #initialize requires [keyword arguments][].
 When you use SQL to insert into a database you write out the values by hand and
 insert them into the database.  However, when you insert your Pokémon into the
 database you don't want to insert them into the query via string interpolation
-because of potential [dangerous consequences][]. Instead, we need to [sanitize][]
-the data that goes into the query string you need to [execute][].
+because of potential [dangerous consequences][]. Instead, we can do two things:
+
+- We can [sanitize][] the data by removing non-alphanumeric characters
+- We can [parameterize][] the query
+
+It is generally recommended to go with parameters. Check out this [Stack Overflow
+question][] for a good example.
 
 [dangerous consequences]: http://xkcd.com/327/
 [sanitize]: https://www.quora.com/What-exactly-is-data-sanitization-with-respect-to-SQL-injection
-[execute]: http://stackoverflow.com/questions/13462112/inserting-ruby-string-into-sqlite
+[Stack Overflow
+question]: http://stackoverflow.com/questions/13462112/inserting-ruby-string-into-sqlite
 
 ### Getting Started
 
