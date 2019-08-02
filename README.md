@@ -48,34 +48,4 @@ question][] for a good example.
 [Stack Overflow
 question]: http://stackoverflow.com/questions/13462112/inserting-ruby-string-into-sqlite
 
-### Getting Started
-
-- Fork this repo, and clone your fork.
-- `bundle install` (if that doesn't work run `bundle update`)
-- Follow the pending RSPEC tests to get your sense of direction.
-
-***NOTE***: We strongly encourage you to at least attempt the bonus. That being
-said, if you decide that you'd like to move on without completing the bonus
-section, simply comment out the bonus tests and re-run the test suite. So long
-as there are pending tests, Learn will not recognize your code as passing.
-
-### BONUS
-
-Now that we got every pokemon we want to get them ready to fight.
-
-In `spec/pokemon_spec.rb`, uncomment the tests at the bottom of the file to see
-the additional challenge.
-
-In a battle, we need to keep track of health, traditionally represented as `hp`
-(health points). We can start keeping track of `hp`, but we'll need to alter the
-database.  What would be perfect is a SQL query that adds an `hp` column and a
-default value of 60 to every row.  That SQL command should be put into a
-migration file in `db/`.
-
-Once the `hp` column is set up there should be an instance method called
-`alter_hp` that will allow us to change a specific pokémon's health to a new hp.
-It will need to take a new health power as a parameter.
-
-Follow the pending specs for more information.
-
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/pokemon-scraper' title='Objectives:'>Objectives:</a> on Learn.co and start learning to code for free.</p>
