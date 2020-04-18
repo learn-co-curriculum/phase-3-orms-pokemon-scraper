@@ -48,4 +48,4 @@ question][] for a good example.
 [parameterize]: https://stackoverflow.com/questions/4712037/what-is-parameterized-query
 [Stack Overflow question]: http://stackoverflow.com/questions/13462112/inserting-ruby-string-into-sqlite
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/pokemon-scraper' title='Objectives:'>Objectives:</a> on Learn.co and start learning to code for free.</p>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/pokemon-scraper' title='Pokemon Scraper'>Pokemon Scraper</a> on Learn.co and start learning to code for free.</p>
