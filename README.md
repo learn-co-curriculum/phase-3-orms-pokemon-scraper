@@ -1,7 +1,7 @@
 # Pokemon Scraper
 
 ## Objectives
-
+test
 - Set up a `SQLite` database
 - Scrape and save data into your database
 - Use data to make ruby objects
